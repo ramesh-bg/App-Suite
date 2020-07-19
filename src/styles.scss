@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
+
+html,
+body,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Montserrat', sans-serif;
+} 
+
+.mont-font {
+    font-family: 'Montserrat', sans-serif;
+}
+.mat-form-field-infix {
+    padding: 5px 0 12px 0 !important;
+}
+.mat-form-field{
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+}
+.mat-raised-button:not([class*=mat-elevation-z]){
+    letter-spacing: 0.8pt;
+    box-shadow:  9px 3px 8px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px -1px rgba(0, 0, 0, 0.14), 0px 1px 5px 6px rgba(0, 0, 0, 0.12)
+}
