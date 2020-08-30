@@ -1,25 +1,27 @@
 <div class="landing-container" fxLayout="row" fxLayoutAlign="end center" fxLayoutAlign.lt-md="center center">
-    <div fxLayout="column" class="sign-up-block" fxFlex="30" fxFlex.xs="94" fxFlex.sm="50" fxFlex.md="40">
+    <div fxLayout="column" style="overflow:hidden;" class="sign-up-block" fxFlex="30" fxFlex.xs="94" fxFlex.sm="50"
+        fxFlex.md="40">
         <form [formGroup]="loginForm">
-            <mat-card>
+            <mat-card [@slideInOut]>
                 <div fxLayout="column">
                     <div fxLayout="row" fxLayoutAlign="center center">
                         <h3>Account Login</h3>
                     </div>
                     <div fxLayout="row">
                         <mat-form-field appearance="outline">
-                            <input matInput type="text" formControlname="username" placeholder="Username">
+                            <input matInput type="text" formControlName="username" placeholder="Username">
                             <mat-icon matSuffix>account_circle</mat-icon>
                         </mat-form-field>
                     </div>
                     <div fxLayout="row">
                         <mat-form-field appearance="outline">
-                            <input matInput type="password" formControlname="password" placeholder="Password">
+                            <input matInput type="password" formControlName="password" placeholder="Password">
                             <mat-icon matSuffix>visibility</mat-icon>
                         </mat-form-field>
                     </div>
                     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-                        <button style="width:70%;" mat-raised-button color="primary">LOGIN</button>
+                        <button style="width:70%;" mat-raised-button color="primary"
+                            (click)="loginUser()">LOGIN</button>
                         <span class="forgot-pass">Forgot Password ?</span>
                     </div>
 

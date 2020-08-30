@@ -1,0 +1,12 @@
+<div class="container" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="space-around center" style="width: 100%;">
+        <div fxLayout="column" *ngFor="let item of appList" class="app-block">
+            <mat-card [style.background-image]="item.gradient">
+                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <img [src]="item.imagePath" />
+                    <label>{{item.title}}</label>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -10,20 +10,30 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // Component Imports
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { BackendService } from './services/backend.service';
+import { InterceptorService } from './services/interceptor.service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 const routes: Routes = [
-  { path: '**', component: LandingComponent }
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'landing', component: LandingComponent }
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +46,17 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [BackendService,
+    {
+      // Provider for APP_INITIALIZER
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 

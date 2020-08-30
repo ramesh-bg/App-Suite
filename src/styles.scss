@@ -1,14 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 html,
 body {
-    height: 100%;
-}
-body {
+    min-height: 100vh;
+    height: auto;
     margin: 0;
 }
-
 html,
 body,
 p,
@@ -18,21 +16,55 @@ h2,
 h3,
 h4,
 h5,
-h6{
-    font-family: 'Montserrat', sans-serif;
-} 
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+app-root,
+app-landing,
+app-dashboard {
+    width: 100%;
+    height: 100vh;
+}
 
 .mont-font {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .mat-form-field-infix {
     padding: 5px 0 12px 0 !important;
 }
-.mat-form-field{
+.mat-form-field {
     width: 100%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
-.mat-raised-button:not([class*=mat-elevation-z]){
+.mat-raised-button:not([class*="mat-elevation-z"]) {
     letter-spacing: 0.8pt;
-    box-shadow:  9px 3px 8px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px -1px rgba(0, 0, 0, 0.14), 0px 1px 5px 6px rgba(0, 0, 0, 0.12)
+    font-weight: bold;
+    box-shadow: 9px 3px 8px 3px rgba(0, 0, 0, 0.2), 0px 2px 2px -1px rgba(0, 0, 0, 0.14),
+        0px 1px 5px 6px rgba(0, 0, 0, 0.12);
+}
+// Snackbar Styles
+.mat-snack-bar-container {
+    font-weight: bold;
+    letter-spacing: 0.3pt;
+    color: rgb(0 0 0 / 81%);
+    background: #d2c7b3;
+}
+.success {
+    border-left: 14px solid #39ab41;
+    .mat-simple-snackbar-action {
+        color: #39ab41 !important;
+    }
+}
+.error {
+    border-left: 14px solid #dd2323;
+    .mat-simple-snackbar-action {
+        color: #dd2323 !important;
+    }
+}
+.warn {
+    border-left: 14px solid #2d7ec2;
+    .mat-simple-snackbar-action {
+        color: #2d7ec2 !important;
+    }
 }

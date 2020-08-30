@@ -1,0 +1,25 @@
+@import "../../../styles.scss";
+
+.container {
+    background: #eeeeee;
+    height: 100vh;
+}
+.app-block {
+    cursor: pointer;
+    height: 120px;
+    width: 200px;
+    label {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 0.7pt;
+    }
+    img {
+        height: 100px;
+        width: 100px;
+    }
+    :hover {
+        transform: scale(1.05);
+    }
+}
